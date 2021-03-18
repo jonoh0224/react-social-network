@@ -61,7 +61,6 @@ export class ImgCoverComponent extends Component<IImgCoverComponentProps,IImgCov
       alignItems: 'center',
       width: '100%',
       height: '100px',
-      position: 'relative',
       color: '#cacecd',
       fontWeight: 400
     },

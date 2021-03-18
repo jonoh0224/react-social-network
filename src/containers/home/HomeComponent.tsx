@@ -288,7 +288,7 @@ export class HomeComponent extends Component<IHomeComponentProps, IHomeComponent
               [classes[`contentShift-${anchor}`]]: drawerOpen,
             })}
           >
-          
+
             <HR enabled={loaded!} data={{ mergedPosts, loadDataStream, hasMorePosts }} />
           </main>
         </div>
@@ -369,4 +369,4 @@ const mapStateToProps = (state: Map<string, any>, ownProps: IHomeComponentProps)
 }
 
 // - Connect component to redux store
-export default withRouter<any>(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles as any, { withTheme: true })(HomeComponent as any) as any)) as typeof HomeComponent
+export default withRouter<any, any>(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles as any, {withTheme: true})(HomeComponent as any) as any)) as unknown as typeof HomeComponent

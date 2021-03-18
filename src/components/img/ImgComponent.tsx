@@ -37,7 +37,6 @@ export class ImgComponent extends Component<IImgComponentProps,IImgComponentStat
       alignItems: 'center',
       width: '100%',
       height: '100px',
-      position: 'relative',
       color: '#cacecd',
       fontWeight: 400
     },

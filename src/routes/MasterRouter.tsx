@@ -57,4 +57,4 @@ export class MasterRouter extends Component<IRouterProps, any> {
     )
   }
 }
-export default withRouter<any>(connect(null, null)(MasterRouter as any)) as typeof MasterRouter
+export default withRouter<any, any>(connect(null, null)(MasterRouter as any)) as unknown as typeof MasterRouter

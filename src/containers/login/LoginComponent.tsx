@@ -162,7 +162,7 @@ export class LoginComponent extends Component<ILoginComponentProps, ILoginCompon
         <IconButton
           onClick={() => loginWithOAuth!(OAuthType.GITHUB)}
         > <div className='icon-github icon'></div> </IconButton>
-  
+
       </div>
     )
 
@@ -184,7 +184,7 @@ export class LoginComponent extends Component<ILoginComponentProps, ILoginCompon
                     <h2 className='zoomOutLCorner animated g__paper-title'>{translate!('login.title')}</h2>
                   </div>
                   {config.settings.enabledOAuthLogin ? OAuthLogin : ''}
-                
+
                   <Divider style={this.styles.divider} />
                   <TextField
                     className={classes.textField}
@@ -255,4 +255,4 @@ const mapStateToProps = (state: any, ownProps: ILoginComponentProps) => {
 }
 
 // - Connect component to redux store
-export default withRouter<any>(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles as any)(localize(LoginComponent as any, 'locale', CommonAPI.getStateSlice) as any) as any)) as typeof LoginComponent
+export default withRouter<any, any>(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles as any)(localize(LoginComponent as any, 'locale', CommonAPI.getStateSlice) as any) as any)) as unknown as typeof LoginComponent
