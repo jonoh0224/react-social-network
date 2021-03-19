@@ -139,6 +139,7 @@ export const dbGetPeopleInfo = (page: number, limit: number) => {
     if (uid && lastPageRequest !== page) {
 
       return userService.getUsersProfile(uid, lastUserId, page, limit).then((result) => {
+        console.log('hey?')
         if (!result.users || !(result.users.length > 0)) {
           return dispatch(notMoreDataPeople())
         }

@@ -73,7 +73,7 @@ export const dbFollowUser = (followingCircleId: string, userFollowing: UserTie) 
     return userTieService.tieUseres(
       { userId: user.userId!, fullName: user.fullName, avatar: user.avatar, approved: false },
       { userId: userFollowing.userId!, fullName: userFollowing.fullName, avatar: userFollowing.avatar, approved: false },
-      [followingCircleId]
+      [Object.assign({},followingCircleId)]
     )
       .then(() => {
         let userTie: Map<string, any> = Map(new UserTie(
@@ -83,7 +83,7 @@ export const dbFollowUser = (followingCircleId: string, userFollowing: UserTie) 
           userFollowing.avatar,
           false,   
       ))
-      userTie = userTie.set('circleIdList', List([followingCircleId]))
+      userTie = userTie.set('circleIdList', List([Object.assign({},followingCircleId)]))
 
         dispatch(addFollowingUser(userTie))
 

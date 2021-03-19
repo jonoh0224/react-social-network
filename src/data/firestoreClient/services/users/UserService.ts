@@ -68,6 +68,7 @@ export class UserService implements IUserService {
   public getUsersProfile: (userId: string, lastUserId?: string, page?: number, limit?: number)
     => Promise<{ users: { [userId: string]: Profile }[], newLastUserId: string }> = (userId, lastUserId, page, limit = 10) => {
       return new Promise<{ users: { [userId: string]: Profile }[], newLastUserId: string }>((resolve, reject) => {
+        console.log('hey!!!!!')
         let parsedData: { [userId: string]: Profile }[] = []
 
         let query = db.collection('userInfo').where('state', '==', 'active')
